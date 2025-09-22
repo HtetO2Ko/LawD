@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:law_diary/core/configs/assets/app_images.dart';
 import 'package:law_diary/core/configs/theme/app_colors.dart';
+import 'package:law_diary/core/utils/app_navigation_utils.dart';
 import 'package:law_diary/core/utils/button_utils.dart';
+import 'package:law_diary/core/utils/toast_message_utils.dart';
 import 'package:law_diary/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:law_diary/features/auth/presentation/bloc/login_state.dart';
+import 'package:law_diary/features/diary/presentation/diary_list_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -15,7 +18,15 @@ class LoginPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => LoginCubit(),
       child: BlocConsumer<LoginCubit, LoginState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          if (state is LoginSuccess) {
+            AppNavigator.push(context, DiaryListPage());
+          }
+
+          if (state is LoginError) {
+            ToastMessage.showSnackBar(state.message, false);
+          }
+        },
         builder: (context, state) {
           return GestureDetector(
             onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
@@ -87,6 +98,7 @@ class LoginPage extends StatelessWidget {
   Widget _loginBtn(BuildContext context) {
     return CustomButton(
       btnTxt: "login",
+      isLoading: context.read<LoginCubit>().isLoading,
       onTap: context.read<LoginCubit>().login,
     );
   }

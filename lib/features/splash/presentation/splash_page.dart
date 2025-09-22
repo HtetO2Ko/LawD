@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:law_diary/core/configs/assets/app_images.dart';
-import 'package:law_diary/core/utils/app_navigation.dart';
+import 'package:law_diary/core/utils/app_navigation_utils.dart';
 import 'package:law_diary/features/auth/presentation/login_page.dart';
 import 'package:law_diary/features/diary/presentation/diary_list_page.dart';
 import 'package:law_diary/features/splash/presentation/bloc/splash_cubit.dart';

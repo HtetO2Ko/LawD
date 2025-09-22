@@ -8,14 +8,12 @@ class ChangeVisibility extends LoginState {}
 
 class LoginLoading extends LoginState {}
 
-class LoginLoaded extends LoginState {}
-
 class LoginSuccess extends LoginState {
   final UserEntity userData;
-  LoginSuccess(this.userData);
+  LoginSuccess({required this.userData});
 }
 
 class LoginError extends LoginState {
   final String message;
-  LoginError(this.message);
+  LoginError({required this.message});
 }

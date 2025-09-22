@@ -33,17 +33,23 @@ class LoginCubit extends Cubit<LoginState> {
 
     // api calling
     try {
-      print("UserName ${_usernameCtr.text}");
-      print("UserName ${_passwordCtr.text}");
       final returnedData = await sl<LoginUseCase>().call(
         params: LoginRequestModel(
           username: _usernameCtr.text,
           password: _passwordCtr.text,
         ),
       );
-      print("Return Data:>>> $returnedData");
+      _isLoading = false;
+      returnedData.fold(
+        (error) {
+          emit(LoginError(message: error));
+        },
+        (data) {
+          emit(LoginSuccess(userData: data));
+        },
+      );
     } catch (e) {
-      print("Error >> $e");
+      debugPrint("Error >> $e");
     }
   }
 }
