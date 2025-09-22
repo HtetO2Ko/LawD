@@ -1,4 +1,4 @@
-package com.example.law_diary
+package com.tastysoft.lawd
 
 import io.flutter.embedding.android.FlutterActivity
 
