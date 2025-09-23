@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:law_diary/core/di/service_locator.dart';
-import 'package:law_diary/features/auth/domain/usecase.dart/auth_usecase.dart';
+import 'package:law_diary/features/auth/domain/usecase/auth_usecase.dart';
 
 class AuthInterceptor extends Interceptor {
   @override

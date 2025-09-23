@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:law_diary/core/di/service_locator.dart';
 import 'package:law_diary/features/auth/data/models/auth_req_params.dart';
-import 'package:law_diary/features/auth/domain/usecase.dart/auth_usecase.dart';
+import 'package:law_diary/features/auth/domain/usecase/auth_usecase.dart';
 import 'package:law_diary/features/auth/presentation/bloc/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {

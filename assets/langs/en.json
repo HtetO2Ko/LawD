@@ -5,6 +5,14 @@
 
   "diaries": "Diaries",
   "books": "Books",
-  "edit": "Edit",
-  "forgot-psw": "Forgot Password"
+  "forgot-psw": "Forgot Password",
+
+  "no-data": "No Data",
+  "case-no": "Case No.",
+  "case-type": "Case Type",
+  "client": "Client",
+  "pre-date": "Previous Date",
+  "todo": "Todo",
+  "action": "Action",
+  "appointment-date": "Appointment Date"
 }

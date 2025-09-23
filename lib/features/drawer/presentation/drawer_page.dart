@@ -53,14 +53,6 @@ class DrawerPage extends StatelessWidget {
                   icon: Icons.menu_book,
                   txt: 'books',
                 ),
-                _drawWidget(
-                  onTap: () {
-                    advancedDrawerController.hideDrawer();
-                    // AppNavigator.pushReplacement(context, ChangePasswordPage());
-                  },
-                  icon: Icons.edit,
-                  txt: 'edit',
-                ),
                 _drawWidget(onTap: () {}, icon: Icons.lock, txt: 'forgot-psw'),
                 _langWidget(context, state),
                 SizedBox(height: 10),
@@ -80,13 +72,28 @@ class DrawerPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            userData.username,
-            style: TextStyle(
-              fontSize: 20,
-              color: AppColors.primary,
-              fontWeight: FontWeight.bold,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                userData.username,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: AppColors.primary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  debugPrint("Edit button click");
+                },
+                child: SizedBox(
+                  width: 30,
+                  height: 30,
+                  child: Icon(Icons.edit, color: AppColors.primary, size: 20),
+                ),
+              ),
+            ],
           ),
           Text(
             "@hteto2ko",

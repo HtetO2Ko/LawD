@@ -5,11 +5,11 @@ import 'package:dio/dio.dart';
 import 'package:law_diary/core/constants/api_url.dart';
 import 'package:law_diary/core/di/service_locator.dart';
 import 'package:law_diary/core/network/dio_client.dart';
-import 'package:law_diary/core/utils/storage_utils.dart';
+import 'package:law_diary/core/utils/storage/storage_utils.dart';
 import 'package:law_diary/features/auth/data/models/auth_models.dart';
 import 'package:law_diary/features/auth/data/models/auth_req_params.dart';
 import 'package:law_diary/core/constants/storage_keys.dart';
-import 'package:law_diary/core/utils/secure_storage_utils.dart';
+import 'package:law_diary/core/utils/storage/secure_storage_utils.dart';
 
 abstract class AuthSource {
   Future<Either> login(LoginRequestModel request);
