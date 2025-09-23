@@ -49,6 +49,8 @@ class LoginCubit extends Cubit<LoginState> {
         },
       );
     } catch (e) {
+      _isLoading = false;
+      emit(LoginError(message: e.toString()));
       debugPrint("Error >> $e");
     }
   }

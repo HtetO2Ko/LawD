@@ -23,6 +23,8 @@ void setupServiceLocator() {
   // Login Page
   sl.registerSingleton<LoginUseCase>(LoginUseCase());
   sl.registerSingleton<IsLoggedInUseCase>(IsLoggedInUseCase());
+  sl.registerSingleton<TokenUseCase>(TokenUseCase());
+  sl.registerSingleton<LoginUserUseCase>(LoginUserUseCase());
 
   //// Sources
   sl.registerSingleton<AuthSource>(AuthSourceImpl());

@@ -1,5 +1,10 @@
 {
   "username": "Username",
   "psw": "Password",
-  "login": "Login"
+  "login": "Login",
+
+  "diaries": "Diaries",
+  "books": "Books",
+  "edit": "Edit",
+  "forgot-psw": "Forgot Password"
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const primary = Color(0xFF2C3E50);
   static const background = Color(0xFFD7D3BF);
+  static const drawerBackground = Color(0xFFC1BAA1);
 
   // Button color
   static const highlightColor = Color(0xFFD9C4B0);

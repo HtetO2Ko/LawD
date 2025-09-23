@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:law_diary/core/di/service_locator.dart';
+import 'package:law_diary/features/auth/domain/usecase.dart/auth_usecase.dart';
 
 class AuthInterceptor extends Interceptor {
   @override
@@ -8,8 +10,8 @@ class AuthInterceptor extends Interceptor {
     RequestInterceptorHandler handler,
   ) async {
     try {
-      // final String token = await sl<TokenUseCase>().call();
-      // options.headers['Authorization'] = 'Bearer $token';
+      final String token = await sl<TokenUseCase>().call();
+      options.headers['Authorization'] = 'Bearer $token';
     } catch (e) {
       debugPrint('Error fetching token: $e');
     }
@@ -18,7 +20,7 @@ class AuthInterceptor extends Interceptor {
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) async {
-    final requestOptions = err.requestOptions;
+    // final requestOptions = err.requestOptions;
 
     final isTokenExpired =
         err.response?.statusCode == 200 &&
