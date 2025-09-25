@@ -1,12 +1,15 @@
 {
+  "login_page": "Login Page",
   "username": "Username",
   "psw": "Password",
   "login": "Login",
 
+  "drawer": "Drawer",
   "diaries": "Diaries",
   "books": "Books",
   "forgot-psw": "Forgot Password",
 
+  "diary_list": "Diary List Page",
   "no-data": "No Data",
   "case-no": "Case No.",
   "case-type": "Case Type",
@@ -14,5 +17,11 @@
   "pre-date": "Previous Date",
   "todo": "Todo",
   "action": "Action",
-  "appointment-date": "Appointment Date"
+  "appointment-date": "Appointment Date",
+
+  "diary_entry": "Diary Entry Page",
+  "add-diary": "Add Diary",
+  "edit-diary": "Edit Diary",
+  "pre-action": "Previous Action",
+  "case-doc-file": "Case Doc File"
 }

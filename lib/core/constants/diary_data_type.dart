@@ -1,0 +1,1 @@
+enum DiaryDateType { previous, next }

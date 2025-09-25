@@ -1,17 +1,18 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:law_diary/core/di/service_locator.dart';
+import 'package:law_diary/core/utils/app_navigation_utils.dart';
 import 'package:law_diary/features/auth/domain/entities/auth_entities.dart';
 import 'package:law_diary/features/auth/domain/usecase/auth_usecase.dart';
 import 'package:law_diary/features/diary/data/models/get_diary_list_params.dart';
 import 'package:law_diary/features/diary/domain/usecase/diary_usecase.dart';
+import 'package:law_diary/features/diary/presentation/diary_entry_page.dart';
 import 'package:law_diary/features/diary/presentation/bloc/list/diary_list_state.dart';
 
 class DiaryListCubit extends Cubit<DiaryListState> {
   DiaryListCubit() : super(DiaryListLoading());
 
   getDiaryList() async {
-    // await Future.delayed(Duration(seconds: 3));
-    // emit(DiaryListLoaded(diaryList: []));
     final UserEntity userData = await sl<LoginUserUseCase>().call();
     var returnedData = await sl<DiaryListUsecase>().call(
       params: DiaryListReqParams(
@@ -28,5 +29,12 @@ class DiaryListCubit extends Cubit<DiaryListState> {
         emit(DiaryListLoaded(diaryList: data));
       },
     );
+  }
+
+  void goAddDiary(BuildContext context) async {
+    var success = await AppNavigator.push(context, DiaryEntryPage());
+    if (success != "null") {
+      getDiaryList();
+    }
   }
 }

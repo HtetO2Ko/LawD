@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:law_diary/core/configs/theme/app_colors.dart';
 import 'package:law_diary/core/utils/appbar_utils.dart';
 import 'package:law_diary/core/utils/display_error.dart';
 import 'package:law_diary/core/utils/drawer_utils.dart';
@@ -61,6 +62,21 @@ class DiaryListPage extends StatelessWidget {
 
                   return Container();
                 },
+              ),
+
+              floatingActionButton: GestureDetector(
+                onTap: () => context.read<DiaryListCubit>().goAddDiary(context),
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: AppColors.tableBody,
+                  ),
+                  child: Center(
+                    child: Icon(Icons.add, color: AppColors.primary),
+                  ),
+                ),
               ),
             ),
           );

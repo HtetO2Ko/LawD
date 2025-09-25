@@ -1,18 +1,27 @@
 {
+  "login_page": "Login Page",
   "username": "နာမည်",
   "psw": "စကားဝှတ်",
   "login": "ဝင်မည်။",
 
+  "drawer": "Drawer",
   "diaries": "ဒိုင်ယာရီများ",
   "books": "စာအုပ်များ",
   "forgot-psw": "လျှို့ဝှက်နံပါတ်မေ့နေပါသလား",
 
+  "diary_list": "Diary List Page",
   "no-data": "ဒေတာ မရှိပါ။",
   "case-no": "အမှုနံပါတ်",
   "case-type": "အမှုအမျိုးအစား",
   "client": "အမှုသည်",
-  "pre-date": "အရင်ရုံးချိန်းရက်",
+  "pre-date": "ယခင် ရုံးချိန်းရက်",
   "todo": "လုပ်ဆောင်ရန်",
   "action": "လုပ်ဆောင်ချက်",
-  "appointment-date": "နောက်ရုံးချိန်းရက်"
+  "appointment-date": "နောက်ရုံးချိန်းရက်",
+
+  "diary_entry": "Diary Entry Page",
+  "add-diary": "ဒိုင်ယာရီ အသစ်ထည့်ရန်",
+  "edit-diary": "ဒိုင်ယာရီ ပြင်ရန်",
+  "pre-action": "ယခင် လုပ်ဆောင်ချက်",
+  "case-doc-file": "အမှုတွဲ"
 }

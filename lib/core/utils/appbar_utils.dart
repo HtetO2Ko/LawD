@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:law_diary/core/configs/theme/app_colors.dart';
+import 'package:law_diary/core/utils/app_navigation_utils.dart';
 
 class AppbarUtils extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
@@ -39,12 +40,12 @@ class AppbarUtils extends StatelessWidget implements PreferredSizeWidget {
               ? null
               : InkWell(
                   onTap: () {
-                    Navigator.pop(context);
+                    AppNavigator.pop(context);
                   },
                   child: const Icon(
                     Icons.arrow_back_ios_new,
                     size: 23,
-                    color: Colors.black,
+                    color: AppColors.primary,
                   ),
                 )),
       bottom: bottom,
